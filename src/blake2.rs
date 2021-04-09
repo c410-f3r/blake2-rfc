@@ -340,7 +340,7 @@ macro_rules! blake2_impl {
 #[cfg_attr(feature = "cargo-clippy", allow(cast_possible_truncation, unreadable_literal))]
 #[cold]
 #[doc(hidden)]
-pub fn selftest_seq(len: usize) -> ArrayVec<[u8; 1024]> {
+pub fn selftest_seq(len: usize) -> ArrayVec<u8, 1024> {
     use core::num::Wrapping;
 
     let seed = Wrapping(len as u32);
